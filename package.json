@@ -1,0 +1,26 @@
+{
+  "name": "exercise-four",
+  "version": "1.0.0",
+  "description": "\"# Dynamic-Web-Exercise-Four\"",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tg1625/Dynamic-Web-Exercise-Four.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tg1625/Dynamic-Web-Exercise-Four/issues"
+  },
+  "homepage": "https://github.com/tg1625/Dynamic-Web-Exercise-Four#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "12.14.1"
+  }
+}
