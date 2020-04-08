@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/tg1625/Dynamic-Web-Exercise-Four#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "firebase": "^7.13.2"
   },
   "engines": {
     "node": "12.x"
