@@ -1,6 +1,7 @@
+/*----- FIREBASE ------ */
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
-var firebase = require("firebase/app");
+var firebase = require("firebase");
 // Add the Firebase products that you want to use
 require("firebase/auth");
 require("firebase/firestore");
@@ -17,15 +18,31 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  //referene the database
+  const db = firebase.firestore();
+  //get blog posts
+  const blogpostarray = [];
+  const blogpost = db.collection("blogposts").get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data()}`);
+        blogpostarray.push(doc.data());
+    });
+  })
+  .catch(function(error){
+    console.log("Error:",error);
+  });
 
+
+
+/* ---- EXPRESS --- */
 //import express
 const express = require('express')
 //initiate express to app
 const app = express()
-
 //set port, use environmental variables, or use 4000 if it doesn't exist 
 const port = process.env.PORT || 4000;
 
-app.get('/', (req, res) => res.send('Exercise Four'))
+app.get('/', (req, res) => res.send(blogpostarray))
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
