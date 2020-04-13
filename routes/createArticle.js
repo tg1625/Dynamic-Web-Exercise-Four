@@ -28,7 +28,7 @@ router.get('/submit', (req, res) => {
     .doc()
     .set(queryParams)
     .then(function(doc) {
-        res.send("Submission success <a href='/create'>Create another post</a>");
+        res.send("Submission success <p><a href='/create'>Create another post</a></p>");
     })
     .catch(function(error){
         console.log("Error:", error);
